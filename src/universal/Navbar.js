@@ -6,7 +6,10 @@ export default function Navbar() {
         <div>
             <nav className = 'Navbar'>
                 <li><a className='Navbar--links' href='./'>Home</a></li>
-                <li><a className='Navbar--links' href='./apartment-finder'>Apartment Finder</a></li>
+                <li><a className='Navbar--links' href='./Map'>Map</a></li>
+                <li><a className='Navbar--links' href='./apartment-finder'>Start Your Search</a></li>
+                <li><a className='Navbar--links' href='./Compare'>Compare</a></li>
+    
             </nav>
             <hr></hr>
         </div>
