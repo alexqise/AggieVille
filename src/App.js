@@ -7,9 +7,12 @@ import {
   Route,
   useRoutes,
 } from "react-router-dom";
-import Navbar from "./universal/Navbar.js"
-import Home from "./pages/Home.js"
-import FindApartments from './pages/Find-Apartments';
+import Navbar from "./universal/Navbar.js";
+import Home from "./pages/Home.js";
+import FindApartments from './pages/Find-Apartments.js';
+import Map from './pages/Map.js';
+import Compare from './pages/Compare.js';
+
 
 
 
@@ -23,6 +26,8 @@ export default function App() {
         <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/apartment-finder' element={<FindApartments />}></Route>
+            <Route path='/Map' element={<Map />}></Route>
+            <Route path='/Compare' element={<Compare />}></Route>
         </Routes>
     </>
   )

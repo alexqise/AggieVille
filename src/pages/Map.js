@@ -1,10 +1,10 @@
 import React from 'react'
 import './Map.css'
 
-export default function FindApartments() {
+export default function Map() {
     return (
         <div>
-            <h1>This is the finder</h1>
+            <h1>This is the interactive map</h1>
         </div>
     )
 }
