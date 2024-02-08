@@ -3,12 +3,17 @@ import "./Navbar.css"
 
 export default function Navbar() {
     return(
-        <div>
-            <nav className = 'Navbar'>
-                <li><a className='Navbar--links' href='./'>Home</a></li>
-                <li><a className='Navbar--links' href='./apartment-finder'>Apartment Finder</a></li>
+        <>
+            <nav>
+                <ul className="Navbar--text">
+                    <li><a className='Navbar--links' href='./'>Home</a></li>
+                    <li><a className='Navbar--links' href='./apartment-finder'>Map</a></li>
+                    <li><a className='Navbar--links' href='./apartment-finder'>Start Your Search</a></li>
+                    <li><a className='Navbar--links' href='./apartment-finder'>Compare</a></li>
+
+                </ul>
+                <img src="logo192.png" alt ="logo"/>
             </nav>
-            <hr></hr>
-        </div>
+        </>
     )
 }
