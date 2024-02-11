@@ -4,11 +4,12 @@ nav {
     justify-content: space-between;
     background-image: linear-gradient(to right, rgba(132, 195, 38, 0.719) , rgba(108, 59, 18, 0.836));
     padding: 20px 0px;
+    padding-right: 20px;
 }
 
 img {
     width: 60px;
-    padding-right: 2cap;
+    margin-right: 20px;
 }
 
 .Navbar--text {
@@ -48,4 +49,55 @@ img {
     bottom:-4px;
     right: 0;
     transition: 0.3sec ease-in-out;
+}
+
+.right {
+    display:flex;
+    align-items: center;
+}
+
+.mobile {
+    display:none;
+}
+
+@media screen and (max-width:796px) {
+    .Navbar--text {
+        display: flex;
+        flex-direction: column;
+        position:fixed;
+        align-items: flex-start;
+        justify-content: flex-start;
+        top:100px;
+        right:0;
+        width:300px;
+        height:100vh;
+        background-color: rgb(229, 224, 148);
+        box-shadow: 0 40px 60px rgb(0, 0, 0, 0).1;
+        padding: 80px 0 0 10px;
+        transition: right 0.5s;
+    }
+
+    
+    .Navbar--text--off {
+        right:-320px;
+    }
+
+    .Navbar--text li {
+        margin-bottom: 25px;
+    }
+    .Navbar--links {
+        font-weight: bold;
+    }
+    .right {
+        display:flex;
+        margin-left:80vw;
+    }
+
+    .mobile {
+        display:block;
+        cursor:pointer;
+    }
+    .mobile i {
+        font-size: 25px;
+    }
 }
