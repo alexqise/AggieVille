@@ -4,13 +4,12 @@ nav {
     justify-content: space-between;
     background-image: linear-gradient(to right, rgba(132, 195, 38, 0.719) , rgba(108, 59, 18, 0.836));
     padding: 20px 0px;
-    padding-right: 20px;
-    width:100vw;
+    width:100%;
 }
 
 img {
     width: 60px;
-    margin-right: 20px;
+    padding-right: 20px;
 }
 
 .Navbar--text {
@@ -65,9 +64,12 @@ img {
     .Navbar--text {
         display: flex;
         flex-direction: column;
-        position:fixed;
+        position:absolute;
         align-items: flex-start;
         justify-content: flex-start;
+        top: 0;
+        margin-left: 0;
+        margin-right: 0;
         top:100px;
         right:0;
         width:300px;
