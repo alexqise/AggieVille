@@ -1,0 +1,79 @@
+.search {
+  display:flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
+
+/* Styles for the container div */
+.button-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for the buttons */
+.button-container button {
+  width: 80px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Styles for the disabled buttons */
+.button-container button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Styles for the input field */
+.button-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 50px; /* Adjust width as needed */
+}
+
+/* Styles for the input field when disabled */
+.button-container input[disabled] {
+  background-color: #f0f0f0;
+  transition: 10ms;
+}
+
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+ table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  table th,
+  tfoot td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }

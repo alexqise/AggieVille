@@ -1,10 +1,12 @@
 import React from 'react'
 import './start-your-search.css'
+import CustomTable from '../components/table'
 
 export default function StartYourSearch() {
     return (
         <div>
-            <h1>This is the finder</h1>
+            <CustomTable />
         </div>
     )
 }
+
