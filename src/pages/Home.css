@@ -1,0 +1,37 @@
+.Home {
+    display: flex;
+    justify-content: center; /* Align content horizontally at the center */
+    align-items: center; /* Align content vertically at the center */
+    height: 100vh; /* Set the height of the container to the full viewport height */
+  }
+  
+  .container {
+    display: inline-block;
+    text-align: center; /* Center text horizontally */
+  }
+  
+  .image-container {
+    max-width: 100%; /* Ensure the images don't exceed the container width */
+  }
+
+  body {
+    font-family: "Playfair Display", serif;
+  }
+
+
+.aggie-ville {
+    font-family: 'Quicksand', sans-serif; /* Apply Quicksand font */
+    font-weight: bold; /* Set font weight to bold */
+  }
+
+.greenButton {
+    background-color: green;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none; 
+  }
