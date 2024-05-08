@@ -2,14 +2,15 @@ import { logRoles } from '@testing-library/react';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './Home.css'; // Import CSS file for styling
+import { lightBlue } from '@mui/material/colors';
 
 export default function Home() {
     return (
     <div style={styles.container}>
         <div style={styles.imageContainer2}>
-            <img src = "home logo.png" alt = "Aggie-Ville" style={styles.logo}/>
+            <img src = "home-logo.png" alt = "Aggie-Ville" style={styles.logo}/>
             <div style={styles.titlecontainer}>
-                <h1 style={styles.title}>AggieVille</h1>
+                <h1 style={styles.title}>AGGIE VILLE</h1>
                 <h2 style={styles.subtitle}>Statement</h2>
                 <p style={styles.description}>We are dedicated to helping students in Davis find a place to live!</p>
                 <h2 style={styles.subtitle}>Goals</h2>
@@ -38,6 +39,7 @@ export default function Home() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              backgroundColor: '#F7EFE0',
             },
             button: {
                 padding: '10px 10px',
@@ -52,16 +54,17 @@ export default function Home() {
                 marginTop: '20px',
               },
             title: {
-              fontSize: '60px',
+              fontSize: '100px',
               marginTop: '70px',
               marginBottom: '30px',
               fontFamily: 'thin',
-              //fontFamily: 'cursive',
-              fontFamily: 'Poppins',
+              fontFamily: 'Montserrat, sans-serif',
+              //fontMono: "Courier",
+              //fontFamily: 'Roboto, sans-serif',
+              //fontFamily: 'Poppins',
               //textDecoration: 'underline',
-              border: '1px solid black',
               padding: '10px', 
-              color: '#6aa84f',
+              color: '#034607',
             },
             description: {
               fontSize: '20px',
