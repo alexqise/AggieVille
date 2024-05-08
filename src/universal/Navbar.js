@@ -19,7 +19,7 @@ export default function Navbar() {
                     <li><a className='Navbar--links' href='./compare'>Compare</a></li>
                 </ul>
                 <div className="right">
-                    <img src="navbar logo2.png" alt ="logo"/>
+                    <img src="navbar-logo2.png" alt ="logo"/>
                     <div className="mobile" onClick={handleClick}>
                         <i className= { clicked ? "fas fa-times" : "fas fa-bars"}></i>
                     </div>
