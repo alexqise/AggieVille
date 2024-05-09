@@ -4,6 +4,9 @@ import mainData from "./data.json"
 import { columnDef } from "./columns"
 import "./table.css"
 
+import { useState, useEffect } from "react"
+import axios from 'axios';
+
 // These imports are all to make the table have google material UI
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -15,11 +18,51 @@ import Paper from '@mui/material/Paper';
 
 // made this using htis tutorial: https://www.youtube.com/watch?v=fL8VlLe8Upo&list=PLcuAByNrzwnj1az88-vpnwj-tDp4eCwXi
 
-export default function CustomTable() {
+/*
+TODO:
+- Remove non-davis regions
+- Add tag functions
+- Add tag columns 
+- Add tag filter
+- Make index start at 1
+- Improve style
+*/
 
+export default function CustomTable() {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+
+    useEffect(() => {
+        // Fetch data when the component mounts
+        fetchData();
+      }, []);
+    
+      const fetchData = async () => {
+        var fetched_data = [];
+        let next = 'https://localwiki.org/api/v4/pages/';
+        do {
+            try {
+                var response = await axios.get(next, {
+                    params: {
+                    tags: 'apartment',
+                    }
+                });
+        
+                fetched_data = [...fetched_data, ...response.data['results']]; // concatenates all the data  
+                next = response.data['next'];
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        } while (response.data.next);
+        setData(fetched_data);
+        setIsLoading(false);
+        console.log('New Data', fetched_data);
+    
+      };
+    
 
     // useMemo will only recompute the memorized value when a depedency has changed
-    const finalData = React.useMemo(() => mainData, [])
     const finalColumnDef = React.useMemo(() => columnDef, []) 
     // need to use a state for sorting
     const [sorting, setSorting] = React.useState([]);
@@ -28,7 +71,7 @@ export default function CustomTable() {
     // creating an instance to hold the data and columns of our table
     const tableInstance = useReactTable({
         columns: finalColumnDef,
-        data: finalData,
+        data: data,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),        
         getPaginationRowModel: getPaginationRowModel(),
@@ -41,7 +84,9 @@ export default function CustomTable() {
         onSortingChange: setSorting,
         onGlobalFilterChange: setFiltering,
     })
-
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
     return <div>
         {/* Adds a search bar that globally filters */}
         <div className="search">
