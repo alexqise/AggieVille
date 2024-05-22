@@ -1,5 +1,4 @@
 import './App.css';
-import { useEffect } from "react"
 import {
   Routes,
   Route,
@@ -10,38 +9,9 @@ import StartYourSearch from './pages/start-your-search.js';
 import Map from './pages/Map.js';
 import Compare from './pages/Compare.js';
 
-import axios from 'axios';
-
-
 
 
 export default function App() {
-  useEffect(() => {
-    // Fetch data when the component mounts
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    var data = [];
-    let next = 'https://localwiki.org/api/v4/pages/';
-    do {
-      try {
-      var response = await axios.get(next, {
-        params: {
-          tags: 'apartment'
-        }
-      });
-
-
-      data = [...data, ...response.data['results']]; // concatenates all the data  
-      next = response.data['next'];
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  } while (response.data.next);
-  console.log('Data', data);
-
-  };
 
   return (
     <>
