@@ -1,6 +1,5 @@
 import React from "react"
 import { flexRender, useReactTable, getCoreRowModel, getSortedRowModel, getFilteredRowModel, getPaginationRowModel } from "@tanstack/react-table"
-import mainData from "./data.json"
 import { columnDef } from "./columns"
 import "./table.css"
 
@@ -24,7 +23,15 @@ TODO:
 - Add tag functions
 - Add tag columns 
 - Add tag filter
-- Make index start at 1
+    - Pool
+    - Website
+    - Gym
+    - Parking
+- Add included filter
+    - Utilities
+    - Furniture
+- Add website column with data
+- Make index start at 1 ✅
 - Improve style
 */
 
@@ -48,8 +55,20 @@ export default function CustomTable() {
                     tags: 'apartment',
                     }
                 });
-        
-                fetched_data = [...fetched_data, ...response.data['results']]; // concatenates all the data  
+                response.data['results'].forEach(apartment => {
+                    if(apartment['region'] == 'https://localwiki.org/api/v4/regions/358/'){
+                        fetched_data.push(apartment);
+                    }
+                    apartment['ammenities'] = [];
+                    ['Pool', 'Gym', 'Parking', 'Shuttle', 'Bus', 'Fitness Center', 'Basketball Court', 'WiFi'].forEach(ammenity => {
+                        if(((apartment['content']).toLowerCase()).includes(ammenity.toLowerCase())){
+                            apartment['ammenities'].push(" "+ ammenity );
+                        }
+                    });
+
+
+                    apartment['website'] = "localwiki.org/" + apartment['name'].replace(' ', '_').toLowerCase();
+                });
                 next = response.data['next'];
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -96,7 +115,7 @@ export default function CustomTable() {
         {/* Buttons for jumping to page and also */}
         <div className="button-container">
             <button onClick ={()=> tableInstance.previousPage()} disabled={!tableInstance.getCanPreviousPage()}>&lt; Prev</button>
-            <input type='number' value= {tableInstance.options.state.pagination.pageIndex} onChange={ e => tableInstance.setPageIndex(e.target.value)}></input>
+            <input type='number' value= {tableInstance.options.state.pagination.pageIndex+1} onChange={ e => tableInstance.setPageIndex(e.target.value)}></input>
             <button onClick ={()=> tableInstance.nextPage()} disabled={!tableInstance.getCanNextPage()}>Next &gt;</button>
         </div>
         <TableContainer component={Paper}>

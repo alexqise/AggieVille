@@ -27,15 +27,11 @@ export const columnDef = [
         header: "Apartment Name"
     },
     {
-        accessorKey: "region",
-        header: "Location"
+        accessorKey: "ammenities",
+        header: "Ammenities"
     },
     {
-        accessorKey: "slug",
-        header: "Rent"
-    },
-    {
-        accessorKey: "url",
-        header: "Website"
+        accessorKey: "website",
+        header: "website"
     },
 ]
