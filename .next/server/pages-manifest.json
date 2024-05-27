@@ -1,0 +1,9 @@
+{
+  "/Compare": "pages/Compare.js",
+  "/Home": "pages/Home.js",
+  "/Map": "pages/Map.js",
+  "/start-your-search": "pages/start-your-search.js",
+  "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js"
+}

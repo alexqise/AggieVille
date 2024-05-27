@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
 .Home {
     display: flex;
     justify-content: center; /* Align content horizontally at the center */
@@ -20,7 +22,7 @@
 
 
 .aggie-ville {
-    font-family: 'Quicksand', sans-serif; /* Apply Quicksand font */
+    font-family: 'Montserrat', sans-serif; /* Apply Quicksand font */
     font-weight: bold; /* Set font weight to bold */
   }
 
