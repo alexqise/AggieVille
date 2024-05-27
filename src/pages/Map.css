@@ -1,5 +1,7 @@
  .google-page {
+    position: absolute;
+    top: 13.5px;
     width: 100vw;
-    height: calc(100vh - 65px);
-    /*consider making react useEffect for window size bc mobile screen has extra bottom empty space*/
+    height: calc(100vh - 17.5px);
+    z-index:-1;
 } 
