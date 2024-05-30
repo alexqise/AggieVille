@@ -1,11 +1,8 @@
-import logo from './logo.svg';
-
 import './App.css';
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import {
   Routes,
   Route,
-  useRoutes,
 } from "react-router-dom";
 import Navbar from "./universal/Navbar.js";
 import Home from "./pages/Home.js";
@@ -28,21 +25,26 @@ export default function App() {
     fetchData();
   }, []);
 
-  const fetchData = () => {
-    // Set up Axios request
-    axios.get('https://localwiki.org/api/v4/pages/', {
-      params: {
-        tags: 'apartment' // Replace 'park' with the tag you want to filter by
-      }
-    })
-    .then(response => {
-      // Handle successful response
-      console.log('Data', response.data);
-    })
-    .catch(error => {
-      // Handle error
-      console.error('Error fetching users:', error);
-    });
+  const fetchData = async () => {
+    var data = [];
+    let next = 'https://localwiki.org/api/v4/pages/';
+    do {
+      try {
+      var response = await axios.get(next, {
+        params: {
+          tags: 'apartment'
+        }
+      });
+
+
+      data = [...data, ...response.data['results']]; // concatenates all the data  
+      next = response.data['next'];
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  } while (response.data.next);
+  console.log('Data', data);
+
   };
 
   ReactDOM.render(
