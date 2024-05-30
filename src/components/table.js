@@ -5,6 +5,7 @@ import "./table.css"
 
 import { useState, useEffect } from "react"
 import axios from 'axios';
+import compareData from '../pages/compareFiles/compare.json'
 
 // These imports are all to make the table have google material UI
 import Table from '@mui/material/Table';
@@ -36,49 +37,51 @@ TODO:
 */
 
 export default function CustomTable() {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    // const [data, setData] = useState([]);
+    // const [isLoading, setIsLoading] = useState(true);
+
+    // setIsLoading(false)
 
 
-    useEffect(() => {
-        // Fetch data when the component mounts
-        fetchData();
-      }, []);
+    // useEffect(() => {
+    //     // Fetch data when the component mounts
+    //     fetchData();
+    //   }, []);
     
-      const fetchData = async () => {
-        var fetched_data = [];
-        let next = 'https://localwiki.org/api/v4/pages/';
-        do {
-            try {
-                var response = await axios.get(next, {
-                    params: {
-                    tags: 'apartment',
-                    }
-                });
-                response.data['results'].forEach(apartment => {
-                    if(apartment['region'] == 'https://localwiki.org/api/v4/regions/358/'){
-                        fetched_data.push(apartment);
-                    }
-                    apartment['ammenities'] = [];
-                    ['Pool', 'Gym', 'Parking', 'Shuttle', 'Bus', 'Fitness Center', 'Basketball Court', 'WiFi'].forEach(ammenity => {
-                        if(((apartment['content']).toLowerCase()).includes(ammenity.toLowerCase())){
-                            apartment['ammenities'].push(" "+ ammenity );
-                        }
-                    });
+    //   const fetchData = async () => {
+    //     var fetched_data = [];
+    //     let next = 'https://localwiki.org/api/v4/pages/';
+    //     do {
+    //         try {
+    //             var response = await axios.get(next, {
+    //                 params: {
+    //                 tags: 'apartment',
+    //                 }
+    //             });
+    //             response.data['results'].forEach(apartment => {
+    //                 if(apartment['region'] == 'https://localwiki.org/api/v4/regions/358/'){
+    //                     fetched_data.push(apartment);
+    //                 }
+    //                 apartment['ammenities'] = [];
+    //                 ['Pool', 'Gym', 'Parking', 'Shuttle', 'Bus', 'Fitness Center', 'Basketball Court', 'WiFi'].forEach(ammenity => {
+    //                     if(((apartment['content']).toLowerCase()).includes(ammenity.toLowerCase())){
+    //                         apartment['ammenities'].push(" "+ ammenity );
+    //                     }
+    //                 });
 
 
-                    apartment['website'] = "localwiki.org/" + apartment['name'].replace(' ', '_').toLowerCase();
-                });
-                next = response.data['next'];
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        } while (response.data.next);
-        setData(fetched_data);
-        setIsLoading(false);
-        console.log('New Data', fetched_data);
+    //                 apartment['website'] = "localwiki.org/" + apartment['name'].replace(' ', '_').toLowerCase();
+    //             });
+    //             next = response.data['next'];
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     } while (response.data.next);
+    //     setData(fetched_data);
+    //     setIsLoading(false);
+    //     console.log('New Data', fetched_data);
     
-      };
+    //   };
     
 
     // useMemo will only recompute the memorized value when a depedency has changed
@@ -90,7 +93,7 @@ export default function CustomTable() {
     // creating an instance to hold the data and columns of our table
     const tableInstance = useReactTable({
         columns: finalColumnDef,
-        data: data,
+        data: compareData,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),        
         getPaginationRowModel: getPaginationRowModel(),
@@ -103,9 +106,9 @@ export default function CustomTable() {
         onSortingChange: setSorting,
         onGlobalFilterChange: setFiltering,
     })
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
+    // if (isLoading) {
+    //     return <div>Loading...</div>;
+    // }
     return <div>
         {/* Adds a search bar that globally filters */}
         <div className="search">
