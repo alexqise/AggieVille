@@ -18,7 +18,6 @@ export default function Navbar() {
                     <li><a className='Navbar--links' href='./map'>Map</a></li>
                     <li><a className='Navbar--links' href='./start-your-search'>Start Your Search</a></li>
                     <li><a className='Navbar--links' href='./compare'>Compare</a></li>
-                    <li><a className='Navbar--links' href='./login'>Login</a></li>
                 </ul>
                 <div className="right">
                     
