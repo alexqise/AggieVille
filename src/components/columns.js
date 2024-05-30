@@ -27,11 +27,19 @@ export const columnDef = [
         header: "Apartment Name"
     },
     {
-        accessorKey: "ammenities",
-        header: "Ammenities"
+        accessorKey: "rooms",
+        header: "Rooms"
     },
     {
-        accessorKey: "website",
-        header: "website"
+        accessorKey: "priceRange",
+        header: "Price"
+    },
+    {
+        accessorKey: "websiteLink",
+        header: "Website"
+    },
+    {
+        accessorKey: "tags",
+        header: "Location"
     },
 ]
