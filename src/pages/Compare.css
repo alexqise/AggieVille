@@ -1,10 +1,12 @@
+body {
+  background-color: #f9fae2;
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   justify-content: center;
-  padding: 10px;
   margin-left: auto;
   margin-right: auto;
   width: 90vw; 
@@ -14,37 +16,40 @@
 .search-bar {
   margin-top: 30px;
   text-align: left;
-  width: 30vw; 
+  width: 20vw; 
   padding: 8px;
-  font-size: 16px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 30px;
   outline: none;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px 0px inset;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+  font-family: Montserrat, sans-serif;
 }
 
 .search-bar input{
   border: none;
   outline: none;
-  font-size: 16px;
-  width: 29vw;
+  width: 19vw;
+  background-color: white;
+  font-family: Montserrat, sans-serif;
 }
 
 .apartment-list ul {
     position: absolute;
     justify-content: center;
-    /* top: 100%; */
     left: 30vw;
     width: 31vw;
     padding: 0;
     margin: 0;
     list-style-type: none;
-    background-color: #fff;
-    /* max-height: 200px; */
+    background-color: white;
+    max-height: 400px;
     overflow-y: auto;
     border-radius: 0 0 4px 4px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
+    font-family: Montserrat, sans-serif;
     z-index: 80;
 }
 
@@ -77,14 +82,17 @@
 .selected-apartment {
   position: relative;
   border: 1px solid #ccc;
-  margin-top:40px;
+  margin-top: 25px;
+  margin-bottom: 30px;
   margin-left: 10px;
   padding: 10px;
-  width: 40vw;
+  width: 35vw;
   /* height: 60vh; */
-  overflow-y: auto;
+  /* overflow-y: auto; */
   border-radius: 10px 10px 10px 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: rgb(249, 246, 241);
+  font-family: Montserrat, sans-serif;
 }
 
 .selected-apartment img{
@@ -106,7 +114,7 @@
 }
 
 .remove-button:hover {
-  color: rgba(21, 196, 73, 0.425);
+  color: rgba(132, 195, 38, 0.719);
 }
 
 .selected-apartment h2 {

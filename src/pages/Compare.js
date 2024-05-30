@@ -47,11 +47,11 @@ export default function Compare() {
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
-
+    
     return (
         <div className="container">
             <div className="search-bar" ref={searchRef}>
-                    <input type="text" placeholder="Start Your Search..." value={searchTerm} onChange={handleSearch} />
+                    <input type="text" placeholder="Search..." value={searchTerm} onChange={handleSearch} />
             </div>
             {searchTerm !== '' && (
                 <div className="apartment-list">
