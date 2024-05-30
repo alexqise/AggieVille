@@ -1,31 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
 .Home {
     display: flex;
     justify-content: center; /* Align content horizontally at the center */
     align-items: center; /* Align content vertically at the center */
     height: 100vh; /* Set the height of the container to the full viewport height */
   }
-  
   .container {
     display: inline-block;
     text-align: center; /* Center text horizontally */
   }
-  
   .image-container {
     max-width: 100%; /* Ensure the images don't exceed the container width */
   }
-
   body {
     font-family: "Playfair Display", serif;
   }
-
-
 .aggie-ville {
     font-family: 'Montserrat', sans-serif; /* Apply Quicksand font */
     font-weight: bold; /* Set font weight to bold */
   }
-
 .greenButton {
     background-color: green;
     border: 2px solid white;
@@ -35,5 +29,5 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    outline: none; 
+    outline: none;
   }
