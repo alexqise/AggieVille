@@ -1,10 +1,9 @@
-import React from "react"
-import App from "./App"
-import './index.css'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
+import App from '../App';
+import reportWebVitals from '../reportWebVitals';
 
 
 const {REACT_APP_GOOGLE_CLIENT_ID} = process.env; 
@@ -22,8 +21,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
-    , document.getElementById("root"))

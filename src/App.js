@@ -12,6 +12,10 @@ import Home from "./pages/Home.js";
 import StartYourSearch from './pages/start-your-search.js';
 import Map from './pages/Map.js';
 import Compare from './pages/Compare.js';
+import ReactDOM from "react-dom"
+import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+import { Login } from './components/login.js';
 
 import axios from 'axios';
 
@@ -41,6 +45,12 @@ export default function App() {
     });
   };
 
+  ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+    , document.getElementById("root"))
+
   return (
     <>
       <Navbar/>
@@ -49,6 +59,7 @@ export default function App() {
           <Route path='/start-your-search' element={<StartYourSearch />}></Route>
           <Route path='/map' element={<Map />}></Route>
           <Route path='/compare' element={<Compare />}></Route>
+          <Route path='/login' element={<Login/>} />
       </Routes>
     </>
   )
