@@ -1,24 +1,157 @@
+.container {
+  display:flex
+}
+.left-container{
+  width:50%;
+  position: absolute;
+  left:50px;
+  top: 200px;
+}
 
+.words {
+  display:flex;
+}
+
+hr {
+  width: 599px;
+  margin-left:2px;
+  height: 5px;
+  color:black;
+  background-color: black;
+  margin-top:-15px;
+  border:none;
+}
+
+.words h1 {
+  font-size: 100px;
+  font-family: 'Baloo', sans-serif;
+}
+
+.aggie {
+  color:rgb(111, 195, 38)
+}
+
+.ville {
+  color:rgb(65, 65, 36)
+}
+
+.description-container {
+  margin-top:40px;
+  width:620px;
+}
+
+.description {
+  font-size: 1.65rem;
+  line-height: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+
+
+.styled-text em {
+  font-style: italic;
+}
+
+.buttons {
+
+  margin-top: 40px;
+  display:flex;
+  gap: 2rem;
+}
+
+button {
+  background-color: white; /* Choose your desired background color */
+  color: #4CAF50;
+  border: 2px solid #4CAF50 ;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.15rem;
+  border-radius: 7px;
+}
+
+.button-one {
+  background-color: #4CAF50;
+  padding: 1.25rem 3rem;
+  color:white;
+}
+
+.button-two {
+  padding: 1.25rem 3rem;
+}
+
+.button-one:hover {
+  background-color: #449747;
+  border-color: #449747;
+  transition: 0.2s ease-in;
+}
+
+.button-two:hover {
+  background-color:rgb(235, 239, 237);
+  border-color: #3a863d;
+  transition: 0.2s ease-in;
+}
+
+.right-container {
+  position: absolute;
+  right:-7rem;
+  top:50%
+}
+
+.background {
+  width:50rem;
+  z-index:-5;
+}
+
+.image-one {
+  position:absolute;
+  right: 8rem;
+  top: 8rem;
+  width:18rem;
+  border-radius: 25px;
+}
+
+.image-two {
+  position:absolute;
+  right:12.5rem;
+  top:15.5rem;
+  width:20rem;
+  z-index: 2;
+  border-radius: 25px;
+}
+
+.image-three {
+  position:absolute;
+  right:18rem;
+  top:23.5rem;
+  width:20rem;
+  z-index: 1;
+  border-radius: 25px;
+}
+
+
+
+/* 
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 .Home {
     display: flex;
-    justify-content: center; /* Align content horizontally at the center */
-    align-items: center; /* Align content vertically at the center */
-    height: 100vh; /* Set the height of the container to the full viewport height */
+    justify-content: center; Align content horizontally at the center
+    align-items: center; Align content vertically at the center
+    height: 100vh; Set the height of the container to the full viewport height
   }
   .container {
     display: inline-block;
-    text-align: center; /* Center text horizontally */
+    text-align: center; Center text horizontally
   }
   .image-container {
-    max-width: 100%; /* Ensure the images don't exceed the container width */
+    max-width: 100%; Ensure the images don't exceed the container width
   }
   body {
     font-family: "Playfair Display", serif;
   }
 .aggie-ville {
-    font-family: 'Montserrat', sans-serif; /* Apply Quicksand font */
-    font-weight: bold; /* Set font weight to bold */
+    font-family: 'Montserrat', sans-serif; Apply Quicksand font
+    font-weight: bold; Set font weight to bold
   }
 .greenButton {
     background-color: green;
@@ -30,4 +163,4 @@
     font-size: 16px;
     font-weight: bold;
     outline: none;
-  }
+  } */

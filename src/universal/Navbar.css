@@ -33,7 +33,10 @@ img {
     transition: 0.1s ease-in-out;
 }
 .Navbar--links:hover {
-    color:rgb(0, 0, 0);
+    color:white;
+}
+.getStarted a:hover {
+    color:darkseagreen;
 }
 
 .right {
@@ -98,11 +101,7 @@ img {
   justify-content: left;
   font-family: "Raleway", sans-serif;
   font-style: 'cursive';
-  background-image: linear-gradient(to right, rgba(132, 195, 38, 0.719), rgba(108, 59, 18, 0.836));
-  /* border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px; */
+  background-image: linear-gradient(to right, rgb(131, 189, 43), rgb(118, 62, 16));
   text-align: center;
   box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.27);
 }
@@ -124,12 +123,12 @@ nav ul li,
     right:0;
 }
 nav ul li::after {
-  content: "";
+  /* content: "";
   background: #F7EFE0;
   cursor: pointer;
   width: 140%;
   height: 150%;
-  border-radius: 10px;
+  border-radius: 1px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -137,12 +136,27 @@ nav ul li::after {
   z-index: -1;
   opacity: 0;
   transition: opacity 0.25s ease-in;
+  height: 60px; */
 }
 
+
+
 .getStarted::after {
-    opacity: 1;
+    content: "";
+    background: #F7EFE0;
+    cursor: pointer;
+    width: 130%;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: opacity 0.25s ease-in;
+    height: 60px; 
+    opacity: 0.93;
     border-radius: 7px;
-    background: #EDE9DD
+    height: 150%;
 }
 
 /* .home::after {
@@ -160,6 +174,7 @@ nav ul li::after {
     opacity: 0.80;
 } */
 
+
 nav ul li:hover {
   color: #fff;
   cursor: pointer;
@@ -174,3 +189,18 @@ nav ul li:hover::after {
     font-weight: 200;
     font-style: normal;
   }
+
+.current-page::before {
+    content: "";
+    background: #F7EFE0;
+    cursor: pointer;
+    width: 140%;
+    height: 25px;
+    border-radius: 2.5px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: opacity 0.25s ease-in;
+}
