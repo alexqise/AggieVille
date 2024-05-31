@@ -169,5 +169,6 @@ export default function CustomTable() {
             <input type='number' value= {tableInstance.options.state.pagination.pageIndex+1} onChange={ e => tableInstance.setPageIndex(e.target.value)}></input>
             <button onClick ={()=> tableInstance.nextPage()} disabled={!tableInstance.getCanNextPage()}>Next &gt;</button>
         </div>
+
     </div>
 }
