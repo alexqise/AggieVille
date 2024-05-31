@@ -109,11 +109,59 @@ export default function CustomTable() {
     // if (isLoading) {
     //     return <div>Loading...</div>;
     // }
-    return <div>
+    return <div className="table-container">
         {/* Adds a search bar that globally filters */}
         <div className="search">
-            <h5>Search</h5>
-            <input type='text' value = { filtering } onChange={ e => setFiltering(e.target.value)}></input>
+            <input type='text' placeholder='Search...' value = { filtering } onChange={ e => setFiltering(e.target.value)}></input>
+        </div>
+        <div className='pagination-and-table'>
+            <TableContainer component={Paper}>
+            <Table sx={{minWidth:650}} aria-label="simple table">
+                <TableHead> 
+                {/* This essentially maps over all the header elements specified in the data and displays them */}
+                {tableInstance.getHeaderGroups().map((headerElement) => {
+                        return <TableRow key={headerElement.id}>{headerElement.headers.map(columnElement => {
+                            return <TableCell key={columnElement.id} colSpan={columnElement.colSpan} onClick={ columnElement.column.getToggleSortingHandler() }>
+                                <>{
+                                    flexRender(
+                                    columnElement.column.columnDef.header,
+                                    columnElement.getContext()
+                                )} 
+                                </>
+                                {{ // adds up and down sorting using unicde values of up and down arrow
+                                    asc: " \u2191", desc: " \u2193"}[columnElement.column.getIsSorted() ?? null]}
+                            </TableCell>
+                        })}</TableRow>;
+                    })}
+                </TableHead>
+                <TableBody>
+                {/* Maps over all the regular cell elements and displays the data */}
+                    {tableInstance.getRowModel().rows.map(rowElement => {
+                        return <TableRow key={rowElement.id}>
+                            {rowElement.getVisibleCells().map(cellElement => {
+                                return <TableCell key={cellElement.id}>
+                                    {flexRender(
+                                        cellElement.column.columnDef.cell,
+                                        cellElement.getContext())}
+                                </TableCell>
+                            })}
+                        </TableRow>
+                    })}
+                </TableBody>
+            </Table>
+            </TableContainer>
+            <div className='pagination-selector'>
+                {/* Add pagination */}
+                <select value={tableInstance.options.state.pagination.pageSize} 
+                onChange={(e=> tableInstance.setPageSize(e.target.value))}>
+                    {[10,20,30,40].map(pageSizeElement => {
+                        return (<option key={pageSizeElement} value={pageSizeElement}>
+                            {pageSizeElement}
+                            </option>
+                    );
+                    })}
+                </select>
+            </div>
         </div>
         {/* Buttons for jumping to page and also */}
         <div className="button-container">
@@ -121,50 +169,6 @@ export default function CustomTable() {
             <input type='number' value= {tableInstance.options.state.pagination.pageIndex+1} onChange={ e => tableInstance.setPageIndex(e.target.value)}></input>
             <button onClick ={()=> tableInstance.nextPage()} disabled={!tableInstance.getCanNextPage()}>Next &gt;</button>
         </div>
-        <TableContainer component={Paper}>
-        <Table aria-label="simple table" /*style={{ width: '80vw' }}*/>
-            <TableHead> 
-            {/* This essentially maps over all the header elements specified in the data and displays them */}
-            {tableInstance.getHeaderGroups().map((headerElement) => {
-                    return <TableRow key={headerElement.id}>{headerElement.headers.map(columnElement => {
-                        return <TableCell key={columnElement.id} colSpan={columnElement.colSpan} onClick={ columnElement.column.getToggleSortingHandler() }>
-                            <>{
-                                flexRender(
-                                columnElement.column.columnDef.header,
-                                columnElement.getContext()
-                            )} 
-                            </>
-                            {{ // adds up and down sorting using unicde values of up and down arrow
-                                asc: " \u2191", desc: " \u2193"}[columnElement.column.getIsSorted() ?? null]}
-                        </TableCell>
-                    })}</TableRow>;
-                })}
-            </TableHead>
-            <TableBody>
-            {/* Maps over all the regular cell elements and displays the data */}
-                {tableInstance.getRowModel().rows.map(rowElement => {
-                    return <TableRow key={rowElement.id}>
-                        {rowElement.getVisibleCells().map(cellElement => {
-                            return <TableCell key={cellElement.id}>
-                                {flexRender(
-                                    cellElement.column.columnDef.cell,
-                                    cellElement.getContext())}
-                            </TableCell>
-                        })}
-                    </TableRow>
-                })}
-            </TableBody>
-        </Table>
-        </TableContainer>
-        {/* Add pagination */}
-        <select value={tableInstance.options.state.pagination.pageSize} 
-        onChange={(e=> tableInstance.setPageSize(e.target.value))}>
-            {[10,25,50].map(pageSizeElement => {
-                return (<option key={pageSizeElement} value={pageSizeElement}>
-                    {pageSizeElement}
-                    </option>
-            );
-            })}
-        </select>
+
     </div>
 }
