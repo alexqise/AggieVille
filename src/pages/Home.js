@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import './Home.css'; // Import CSS file for styling
 import { lightBlue } from '@mui/material/colors';
+/*
+things to change
+- add home page designs
+- change navbar
+https://blog.hubspot.com/hs-fs/hubfs/Google%20Drive%20Integration/homepage%20design_102022.jpeg?width=650&height=338&name=homepage%20design_102022.jpeg
+- Change poweful not overpowering to aggie ville, make aggie green
+- 
+
+*/
 export default function Home() {
     return (
     <div style={styles.container}>

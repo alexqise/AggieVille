@@ -122,7 +122,7 @@ export default function CustomTable() {
             <button onClick ={()=> tableInstance.nextPage()} disabled={!tableInstance.getCanNextPage()}>Next &gt;</button>
         </div>
         <TableContainer component={Paper}>
-        <Table sx={{minWidth:650}} aria-label="simple table">
+        <Table aria-label="simple table" /*style={{ width: '80vw' }}*/>
             <TableHead> 
             {/* This essentially maps over all the header elements specified in the data and displays them */}
             {tableInstance.getHeaderGroups().map((headerElement) => {

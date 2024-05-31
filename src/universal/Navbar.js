@@ -13,10 +13,11 @@ export default function Navbar() {
                 {/* If clicked, add Navbar--text styles, if not add Navbar--text styles and Navbar--text-off */}
                 <ul className={clicked ? "Navbar--text" : "Navbar--text Navbar--text--off"}>
                     <img src="navbar-logo2.png" alt ="logo"/>
-                    <li><a className='Navbar--links' href='./'>Home</a></li>
+                    <li><a className='Navbar--links home' href='./'>Home</a></li>
                     <li><a className='Navbar--links' href='./map'>Map</a></li>
-                    <li><a className='Navbar--links' href='./start-your-search'>Start Your Search</a></li>
+                    <li><a className='Navbar--links' href='./start-your-search'>Search</a></li>
                     <li><a className='Navbar--links' href='./compare'>Compare</a></li>
+                    <li className ='getStarted'><a className='Navbar--links' href='./start-your-search'>Get Started</a> </li>
                 </ul>
                 <div className="right">
                     <div className="mobile" onClick={handleClick}>
