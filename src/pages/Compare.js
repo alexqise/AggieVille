@@ -77,7 +77,8 @@ export default function Compare() {
                         <button className="remove-button" onClick={() => handleRemoveApartment(apartment)}>X</button>
                         <h2>{apartment.name}</h2>
                         <div>
-                            <div>                                    <img src={apartment.image} alt="Apartments"/>
+                            <div>                                   
+                                <img className='images' src={apartment.image} alt="Apartments"/>
                                 <p>{apartment.rooms}, {apartment.baths}</p>
                                 <p><strong>Price Range:</strong> {apartment.priceRange}</p>
                                 <p>{apartment.inBill}</p>
