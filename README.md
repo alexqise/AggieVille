@@ -8,6 +8,6 @@ Features:
 - User-friendly UI ✨
 
 Screenshots:
-![Home][https://github.com/alexqise/AggieVille/blob/main/public/home.png]
-![Search][https://github.com/alexqise/AggieVille/blob/main/public/search.png]
-![Compare][https://github.com/alexqise/AggieVille/blob/main/public/compare.png]
+![Home](https://github.com/alexqise/AggieVille/blob/main/public/home.png)
+![Search](https://github.com/alexqise/AggieVille/blob/main/public/search.png)
+![Compare](https://github.com/alexqise/AggieVille/blob/main/public/compare.png)
